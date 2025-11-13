@@ -19,6 +19,11 @@
             --accent: #7000ff;
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--darker);
@@ -572,29 +577,6 @@
             66% { transform: translate(-50px, 50px) scale(0.9); }
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2em; }
-            .logo { font-size: 1.5em; }
-            .logo::before, .logo::after { display: none; }
-            .courses-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 2em; }
-        }
-
-        /* Loading Animation */
-        .loader {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--primary);
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
         /* Center download button */
         .download-btn-wrapper {
             text-align: center;
@@ -615,6 +597,214 @@
             0% { background-color: #000000; }
             50% { background-color: #f95d03; }
             100% { background-color: #0dac12ff; }
+        }
+
+        /* Loading Animation */
+        .loader {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design Improvements */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .courses-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logo {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+            }
+            
+            .logo::before, .logo::after {
+                display: none;
+            }
+            
+            .hero {
+                padding: 70px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2em;
+                line-height: 1.3;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+                margin-bottom: 30px;
+            }
+            
+            .search-box input {
+                padding: 15px 15px 15px 50px;
+                font-size: 1em;
+            }
+            
+            .search-box::before {
+                left: 15px;
+                font-size: 1.2em;
+            }
+            
+            .section-title {
+                font-size: 2.2em;
+                letter-spacing: 2px;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 50px;
+            }
+            
+            .course-card {
+                margin: 0 5px;
+            }
+            
+            .course-header {
+                padding: 30px 20px;
+            }
+            
+            .course-body {
+                padding: 20px;
+            }
+            
+            .course-title {
+                font-size: 1.5em;
+            }
+            
+            .course-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            
+            .stat {
+                padding: 10px;
+            }
+            
+            .stat-number {
+                font-size: 1.2em;
+            }
+            
+            .playlist-btn {
+                padding: 15px;
+                font-size: 1em;
+            }
+            
+            .social-media {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2em;
+            }
+            
+            .footer {
+                padding: 30px 15px;
+            }
+            
+            .footer p {
+                font-size: 1em;
+            }
+            
+            .course-card:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+            
+            .social-icon:hover {
+                transform: translateY(-3px) scale(1.05);
+            }
+            
+            .playlist-btn:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5em;
+            }
+            
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            
+            .hero p {
+                font-size: 1em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .course-header {
+                padding: 25px 15px;
+            }
+            
+            .course-icon {
+                font-size: 3em;
+            }
+            
+            .course-title {
+                font-size: 1.3em;
+            }
+            
+            .course-stats {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            
+            .course-description {
+                font-size: 0.95em;
+            }
+            
+            .badge {
+                font-size: 0.8em;
+                padding: 6px 15px;
+            }
+            
+            .download-btn-wrapper {
+                margin: 20px 0;
+            }
+            
+            .animated-highlight {
+                font-size: 0.9em;
+                padding: 5px 8px;
+            }
+            
+            .particle {
+                display: none;
+            }
+            
+            .course-card::before {
+                display: none;
+            }
+        }
+
+        /* Improve touch targets for mobile */
+        .playlist-btn, .social-icon, .search-box input {
+            touch-action: manipulation;
         }
     </style>
 </head>
@@ -943,6 +1133,38 @@
                         <a href="https://www.youtube.com/watch?v=z7QwTMDQ88o&list=PLgH5QX0i9K3oAZUB2QXR-dZac0c9HNyRa&index=1" target="_blank" class="playlist-btn"><span>প্লেলিস্ট দেখুন →</span></a>
                     </div>
                 </div>
+                <!-- Generative AI Full Course  -->
+                <div class="course-card" data-name="Generative AI Full Course">
+                    <div class="tech-line" style="top: 20px; animation-delay: 2s;"></div>
+                    <div class="course-header">
+                        <div class="course-icon">
+    <img src="https://files.prepinsta.com/wp-content/uploads/2025/04/What-is-generative-AI.png" alt="HTML Logo" width="100" height="100">
+</div>
+                        <h3 class="course-title">Generative AI Full Course</h3>
+                        <p class="course-subtitle">বেসিক থেকে অ্যাডভান্স  </p>
+                        <span class="badge">⭐ জনপ্রিয়</span>
+                    </div>
+                    <div class="course-body">
+                        <p class="course-description">Generative AI শিখুন এক ভিড়িওতে ৩০ঘন্টায়।Generative AI শিখতে চাইলে এবং হার্ভার্ড CS50 পাইথন এর কোর্স করুন প্লে লিস্ট ২ও৩ এ </p>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <div class="stat-number">30Hours+</div>
+                                <div class="stat-label">ভিডিও</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">ফ্রি</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">ইংরেজি</div>
+                                <div class="stat-label">ভাষা</div>
+                            </div>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=mEsleV16qdo&t=8s" target="_blank" class="playlist-btn"><span>প্লেলিস্ট দেখুন  1 →</span></a>
+                        <a href="https://www.youtube.com/watch?v=5NgNicANyqM&t=94s" target="_blank" class="playlist-btn"><span>প্লেলিস্ট দেখুন 2 →</span></a>
+                        <a href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=52s" target="_blank" class="playlist-btn"><span>প্লেলিস্ট দেখুন 3 →</span></a>
+                    </div>
+                </div>
                 <!-- Video Editing Capcut Programming -->
                 <div class="course-card" data-name="Capcut ভিড়িও এডিটিং কোর্স">
                     <div class="tech-line" style="top: 20px; animation-delay: 2s;"></div>
@@ -1128,5 +1350,4 @@
         });
     </script>
 </body>
-
 </html>

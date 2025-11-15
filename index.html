@@ -806,6 +806,54 @@
         .playlist-btn, .social-icon, .search-box input {
             touch-action: manipulation;
         }
+
+        /* Admin ID floating card (added) */
+.admin-id {
+    position: fixed;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 240px;
+    background: rgba(10,14,39,0.95);
+    border: 2px solid var(--primary);
+    padding: 16px;
+    border-radius: 14px;
+    text-align: center;
+    z-index: 2000;
+    box-shadow: 0 10px 30px rgba(0,243,255,0.12);
+    backdrop-filter: blur(6px);
+}
+.admin-id .admin-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    display: block;
+    margin: 0 auto 10px;
+    box-shadow: 0 6px 20px rgba(0,243,255,0.15);
+}
+.admin-id .admin-title {
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.admin-id .admin-text {
+    color: #dfe8ff;
+    font-size: 0.92em;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* small social icons inside admin card */
+.admin-id .admin-social { display:flex; justify-content:center; gap:8px; margin-top:8px; }
+.admin-id .admin-social .social-icon { width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; padding:6px; border:1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); }
+.admin-id .admin-social .social-logo { width:18px; height:18px; filter: brightness(0) invert(1); }
+
+/* hide on very small screens */
+@media (max-width: 480px) {
+  .admin-id { display: none; }
+}
     </style>
 </head>
 <body>
@@ -848,11 +896,7 @@
             <h2 class="section-title">✨ফ্রি কোর্স সমূহ✨</h2>
             <div class="main-content">
 
-                <div class="download-btn-wrapper">
-                    <a href="https://jaber858209-afk.github.io/test-my-code/" class="download-btn" target="_blank" rel="noopener">
-                        <p><span class="animated-highlight">১০০টি প্রোগ্রামিং ভাষা ডাউনলোড করতে চাইলে এখানে ক্লিক করুন⛓️‍💥</span></p>
-                    </a>
-                </div>
+                
 
             </div>
             <div class="courses-grid" id="coursesGrid">
@@ -1133,6 +1177,38 @@
                         <a href="https://www.youtube.com/watch?v=z7QwTMDQ88o&list=PLgH5QX0i9K3oAZUB2QXR-dZac0c9HNyRa&index=1" target="_blank" class="playlist-btn"><span>প্লেলিস্ট দেখুন →</span></a>
                     </div>
                 </div>
+                <!-- php Course  -->
+                <div class="course-card" data-name="php Full Course">
+                    <div class="tech-line" style="top: 20px; animation-delay: 2s;"></div>
+                    <div class="course-header">
+                        <div class="course-icon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1024px-PHP-logo.svg.png" alt="HTML Logo" width="৮০" height="50">
+</div>
+                        <h3 class="course-title">php Full Course</h3>
+                        <p class="course-subtitle">বেসিক থেকে অ্যাডভান্স  </p>
+                        <span class="badge">⭐ জনপ্রিয়</span>
+                    </div>
+                    <div class="course-body">
+                        <p class="course-description">php শিখুন মাত্র দুটি প্লে লিস্ট থেকে   </p>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <div class="stat-number">61+ and261+</div>
+                                <div class="stat-label">ভিডিও</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">ফ্রি</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">বাংলা</div>
+                                <div class="stat-label">ভাষা</div>
+                            </div>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=ZJ7xK47gg1o&list=PLwmVgOWoXWb8L6vl5rT8GuFnchIkMS6aA&index=1" target="_blank" class="playlist-btn"><span>প্লেলিস্ট দেখুন →</span></a>
+			<a href="https://www.youtube.com/watch?v=a_qREkJ78f4&list=PL0b6OzIxLPbyrzCMJOFzLnf_-_5E_dkzs&index=1" target="_blank" class="playlist-btn"><span>প্লেলিস্ট দেখুন →</span></a>
+
+                    </div>
+                </div>
                 <!-- Generative AI Full Course  -->
                 <div class="course-card" data-name="Generative AI Full Course">
                     <div class="tech-line" style="top: 20px; animation-delay: 2s;"></div>
@@ -1303,6 +1379,9 @@
                 <a href="https://bn.quora.com/profile/Jeyaul-Hoque-1" target="_blank" class="social-icon">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-py6rkWf_KYJO2IJoiD-HAXSULOlS_pXe-g&s" alt="Quora" class="social-logo">
                 </a>
+                <a href="https://hikmah.net/@jeyaul" target="_blank" class="social-icon">
+                    <img src="https://hikmah.net/favicon.ico" alt="hikmah" class="social-logo">
+                </a>
                 <a href="https://gitlab.com/jeyaulhoque2025" target="_blank" class="social-icon">
                     <img src="https://yt3.googleusercontent.com/Zfx2OSI5XWKhnove-HwdTokQUmCB7cfpX0uGbqxMeQVNMzVPrvgMadFHpbfYoy04NrjFEBk_3A=s900-c-k-c0x00ffffff-no-rj" alt="GitHub" class="social-logo">
                 </a>
@@ -1312,6 +1391,29 @@
         </div>
 
     </footer>
+
+    <!-- Admin ID (floating on right) -->
+    <aside class="admin-id" aria-label="Admin ID">
+        <img class="admin-img" src="https://hikmah.b-cdn.net/662188/conversions/26b44485-ac58-4021-889f-4ed73af65eda-thumb.jpg" alt="Admin Jeyaul">
+        <div class="admin-title">Admin ID</div>
+        <div class="admin-text">আসসালামু আলাইকুম আমার নাম জিয়াউল আমি একজন CST Student আমি এই ওয়েবসাইটি তৈরি করেছি যারা অনলাইনে বা প্লে লিস্টে ফ্রিতে কোর্স করতে চান তাদের জন্য।</div>
+        <div class="admin-social">
+            <a class="social-icon" href="https://www.facebook.com/jeyaulhoque4321?locale=bn_IN" target="_blank" rel="noopener">
+                <img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a class="social-icon" href="https://x.com/jeyaulhoque2025" target="_blank" rel="noopener">
+                <img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="X">
+            </a>
+            <a class="social-icon" href="https://www.instagram.com/jeyaulhoque2025/" target="_blank" rel="noopener">
+                <img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a> <a href="https://hikmah.net/@jeyaul" target="_blank" class="social-icon">
+                    <img src="https://hikmah.net/favicon.ico" alt="hikmah" class="social-logo">
+                </a>
+            <a class="social-icon" href="https://github.com/jeyaulhoquebd" target="_blank" rel="noopener">
+                <img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+            </a>
+        </div>
+    </aside>
 
     <script>
         // Create floating particles
